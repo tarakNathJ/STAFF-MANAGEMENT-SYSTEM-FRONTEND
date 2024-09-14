@@ -8,7 +8,7 @@ export default defineConfig({
 
         proxy: {
             '/BASE': {
-                target: "http://localhost:4000",
+                target: "https://staff-management-system-backend.onrender.com/",
                 changeOrigin: true,
 
                 rewrite: (path) => path.replace(/^\/BASE/, ''),

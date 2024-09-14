@@ -21,9 +21,9 @@ function SingleUserSallary({ data }) {
                 }, {
                 signal: controller.signal
             })
-            // await  setToken(Response.data.Payload);
-            // await  SetAdmin(Response.data.AdminData);
-            await RazorPay_PayOut(Response.data.Payload,Response.data.AdminData);
+            
+            console.log(Response.data.Payload.Salary);
+            await SalaryProvide(Response.data.AdminData,Response.data.Payload);
             
 
         } catch (error) {
@@ -38,79 +38,79 @@ function SingleUserSallary({ data }) {
 
 
 // razorpay payout gatway...
-    const RazorPay_PayOut = async (Token,Admin) => {
+    // const RazorPay_PayOut = async (Token,Admin) => {
         
 
-            const controller = new AbortController()
-            try {
+    //         const controller = new AbortController()
+    //         try {
 
-                const Reaponce = await axios.post('/RAZORPAY/v1/payouts',
-                    {
-                        account_number: `${Token.AccountNumber}`,
-                        amount: Token.Salary * 100,
-                        currency: "INR",
-                        mode: "UPI",
-                        purpose: "salary",
-                        fund_account: {
-                            account_type: "vpa",
-                            vpa: {
-                                address: Token.UPI_ID
-                            },
-                            contact: {
-                                name: Token.Name,
-                                email: Token.Email,
-                                contact: `"${Token.Number}"`,
-                                type: "employee",
-                                reference_id: "Acme Contact ID 12345",
-                                notes: {
-                                    notes_key_1: "Tea, Earl Grey, Hot",
-                                    notes_key_2: "Tea, Earl Grey… decaf."
-                                }
-                            }
-                        },
-                        queue_if_low_balance: true,
-                        reference_id: "Acme Transaction ID 12345",
-                        narration: "Acme Corp Fund Transfer",
-                        notes: {
-                            notes_key_1: "Beam me up Scotty",
-                            notes_key_2: "Engage"
-                        }
-                    }, {
-                    basicAuth: {
-                        Username: Token.RazorPayId,
-                        Password: Token.RazorPayPassword
-                    }
-                }, {
-                    signal: controller.signal
-                })
-                if (Reaponce) {
+    //             const Reaponce = await axios.post('/RAZORPAY/v1/payouts',
+    //                 {
+    //                     account_number: `${Token.AccountNumber}`,
+    //                     amount: Token.Salary * 100,
+    //                     currency: "INR",
+    //                     mode: "UPI",
+    //                     purpose: "salary",
+    //                     fund_account: {
+    //                         account_type: "vpa",
+    //                         vpa: {
+    //                             address: Token.UPI_ID
+    //                         },
+    //                         contact: {
+    //                             name: Token.Name,
+    //                             email: Token.Email,
+    //                             contact: `"${Token.Number}"`,
+    //                             type: "employee",
+    //                             reference_id: "Acme Contact ID 12345",
+    //                             notes: {
+    //                                 notes_key_1: "Tea, Earl Grey, Hot",
+    //                                 notes_key_2: "Tea, Earl Grey… decaf."
+    //                             }
+    //                         }
+    //                     },
+    //                     queue_if_low_balance: true,
+    //                     reference_id: "Acme Transaction ID 12345",
+    //                     narration: "Acme Corp Fund Transfer",
+    //                     notes: {
+    //                         notes_key_1: "Beam me up Scotty",
+    //                         notes_key_2: "Engage"
+    //                     }
+    //                 }, {
+    //                 basicAuth: {
+    //                     Username: Token.RazorPayId,
+    //                     Password: Token.RazorPayPassword
+    //                 }
+    //             }, {
+    //                 signal: controller.signal
+    //             })
+    //             if (Reaponce) {
                     
-                    await SalaryProvide(Admin);
-                }
-                console.log("rezor :", Reaponce);
-            } catch (error) {
-                if (axios.isCancel(error)) {
-                    return
-                }
-                if (axios.isAxiosError(error)) {
-                    return
-                }
-            }
+    //                 await SalaryProvide(Admin);
+    //             }
+    //             console.log("rezor :", Reaponce);
+    //         } catch (error) {
+    //             if (axios.isCancel(error)) {
+    //                 return
+    //             }
+    //             if (axios.isAxiosError(error)) {
+    //                 return
+    //             }
+    //         }
         
 
-    }
+    // }
 
     // to update payment details....
-    const SalaryProvide = async (Admin) => {
+    const SalaryProvide = async (Admin,Paylod) => {
         const controller = new AbortController();
         try {
 
             const Response = await axios.post(`/BASE/API/V1/Sallary`, {
                 UserPersonalId: data.PersonalDetailsID,
                 AdminPerSonalID: Admin._id,
-                EmployName: Token.Name,
+                EmployName: Paylod.Name,
                 ProviderName: "tom",
-                Sallary: Token.Salary
+                Sallary: Paylod.Salary
             },
                 {
                     headers: {

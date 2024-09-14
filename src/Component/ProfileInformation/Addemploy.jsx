@@ -128,7 +128,7 @@ function Addemploy() {
 
 
         <div className='flex justify-end   h-full text-center mt-4 '>
-          <button type="submit" className=' h-12 w-32 bg-blue-700/80 shadow-lg shadow-slate-600 text-xl text-gray-900 font-bold mb-10 mr-20 rounded-lg text-center hover:text-black hover:bg-blue-700 hover:shadow-md   hover:duration-700'>Update</button>
+          <button type="submit" className=' h-12 w-32 bg-blue-700/80 shadow-lg shadow-slate-600 text-xl text-gray-900 font-bold mb-10 mr-20 rounded-lg text-center hover:text-black hover:bg-blue-700 hover:shadow-md   hover:duration-700'>Add Employ</button>
         </div>
 
 
