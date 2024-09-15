@@ -16,7 +16,7 @@ function SingleUser({ data,UserUpdate }) {
 
         try {
             SetError(false);
-            const Responce = await axios.post('https://staff-management-system-backend.onrender.com/API/V1/DeleteUser', { ID: data._id }, {
+            const Responce = await axios.post('/BASE/API/V1/DeleteUser', { ID: data._id }, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
