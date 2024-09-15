@@ -55,7 +55,7 @@ function PersonalInfo() {
     try {
       SetLoding(false);
       SetError(false);
-      const Responce = await axios.post(`https://staff-management-system-backend.onrender.com/API/V1/UpdateUserDetails`, ProfileData, {
+      const Responce = await axios.post(`/BASE/API/V1/UpdateUserDetails`, ProfileData, {
         headers: {
           'Content-Type':"multipart/form-data"
         }
