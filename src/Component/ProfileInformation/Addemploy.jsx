@@ -60,7 +60,7 @@ function Addemploy() {
         try {
             SetLoding(true);
             SetError(false);
-            const Responce = await axios.post(`https://staff-management-system-backend.onrender.com/API/V1/SignUp`, {
+            const Responce = await axios.post(`localhost://4000/API/V1/SignUp`, {
                 Name:FromData.Name,
                 Email: FromData.email,
                 Password: FromData.password,
