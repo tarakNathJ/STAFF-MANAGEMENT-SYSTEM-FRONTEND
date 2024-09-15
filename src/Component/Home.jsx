@@ -16,9 +16,9 @@ function Home() {
           <h1 className='lg:text-4xl md:text-3xl sm:text-2xl font-bold font-serif text-black '>Staff Management System</h1>
           <div className='lg:text-2xl md:text-2xl sm:text-xl '>
             <h2>
-              To simplify and automate the management of</h2>
-              <h2> staff-related activities, including attendance tracking,</h2>
-    <h2>payment processing, and user authentication</h2>
+              ADMIN EMAIL ID :lavofa6172@nastyx.com</h2>
+              <h2> PASSWORD :  tomtom</h2>
+    <h2>and all employ Password is :tomtom</h2>
           
           </div>
         </div>
