@@ -7,10 +7,7 @@ export default defineConfig({
     server: {
 
         proxy: {
-<<<<<<< HEAD
-           
-           
-=======
+
             '/BASE': {
                 target: "https://staff-management-system-backend.onrender.com",
                 changeOrigin: true,
@@ -23,7 +20,7 @@ export default defineConfig({
 
                 rewrite: (path) => path.replace(/^\/RAZORPAY/, ''),
             }
->>>>>>> 005081c (update gitignore)
+
         }
     }
 })
