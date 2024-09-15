@@ -113,7 +113,7 @@ function UpdateAndDelete() {
     try {
       SetError(false);
       console.log("first")
-      const Responce = await axios.post('https://staff-management-system-backend.onrender.com/API/V1/UpdateUser', {
+      const Responce = await axios.post('/BASE/API/V1/UpdateUser', {
         ID: UserId,
         Name: FromData.Name,
         PhoneNumber: FromData.Number,
