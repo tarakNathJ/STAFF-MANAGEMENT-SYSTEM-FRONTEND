@@ -15,7 +15,7 @@ function SallaryProvide() {
             try {
                 setLoding(true);
                 SetError(false);
-                const Responce = await axios.get('https://staff-management-system-backend.onrender.com/API/V1/AllEmploy', {}, {
+                const Responce = await axios.get('/BASE/API/V1/AllEmploy', {}, {
                     headers: {
                         'Content-Type': 'application/json'
                     }
