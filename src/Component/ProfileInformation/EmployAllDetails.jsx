@@ -17,7 +17,7 @@ function EmployAllDetails() {
             try {
                 setLoding(true);
                 SetError(false);
-                const Responce = await axios.get('/BASE/API/V1/EmployDetails', {}, {
+                const Responce = await axios.get('https://staff-management-system-backend.onrender.com/API/V1/EmployDetails', {}, {
                     headers: {
                         'Content-Type': 'application/json'
                     }

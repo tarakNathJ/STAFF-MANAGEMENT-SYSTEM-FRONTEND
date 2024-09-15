@@ -13,7 +13,7 @@ function SingleUserSallary({ data }) {
         const controller = new AbortController();
         try {
 
-            const Response = await axios.post(`/BASE/API/V1/AdminDetails`, { UserPersonalId: data.PersonalDetailsID },
+            const Response = await axios.post(`https://staff-management-system-backend.onrender.com/API/V1/AdminDetails`, { UserPersonalId: data.PersonalDetailsID },
                 {
                     headers: {
                         'Content-Type': 'application/json'
@@ -105,7 +105,7 @@ function SingleUserSallary({ data }) {
         const controller = new AbortController();
         try {
 
-            const Response = await axios.post(`/BASE/API/V1/Sallary`, {
+            const Response = await axios.post(`https://staff-management-system-backend.onrender.com/API/V1/Sallary`, {
                 UserPersonalId: data.PersonalDetailsID,
                 AdminPerSonalID: Admin._id,
                 EmployName: Paylod.Name,

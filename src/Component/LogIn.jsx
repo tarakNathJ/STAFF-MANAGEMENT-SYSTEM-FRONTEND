@@ -55,7 +55,7 @@ function LogIn() {
         try {
             SetLoding(false);
             SetError(false);
-            const Responce = await axios.post(`/BASE/API/V1/logIn`, {
+            const Responce = await axios.post(`https://staff-management-system-backend.onrender.com/API/V1/logIn`, {
                 Email: FromData.email,
                 Password: FromData.password
 

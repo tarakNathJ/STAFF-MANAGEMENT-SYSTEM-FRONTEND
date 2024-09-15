@@ -41,7 +41,7 @@ function Profile() {
     const LogoutHandler = async () => {
         const controller = new AbortController();
         try {
-            const Responce = await axios.get('/BASE/API/V1/logout', {}, {
+            const Responce = await axios.get('https://staff-management-system-backend.onrender.com/API/V1/logout', {}, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
