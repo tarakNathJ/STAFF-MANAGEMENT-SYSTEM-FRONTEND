@@ -12,7 +12,7 @@ export const UserAccountType = createSlice({
     reducers: {
         UserSelectedDetails:(state, action)=>{
             state.userData =action.payload;
-            console.log("redux :",action);
+           
             StoreData(SessionKey,state.userData);
         },
         RemoveSelectedDetails:(state)=>{

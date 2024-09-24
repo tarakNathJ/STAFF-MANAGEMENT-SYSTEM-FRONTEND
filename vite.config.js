@@ -5,22 +5,28 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
     plugins: [react()],
     server: {
-
         proxy: {
-
-            '/BASE': {
-                target: "http://localhost:4000",
+            "/Base": {
+                target: "https://staff-management-system-backend.onrender.com",
                 changeOrigin: true,
                 secure: true,
-                rewrite: (path) => path.replace(/^\/BASE/, ''),
-            },
-            '/RAZORPAY': {
-                target: "https://api.razorpay.com",
-                changeOrigin: true,
-
-                rewrite: (path) => path.replace(/^\/RAZORPAY/, ''),
+                rewrite: (path) => path.replace(/^\/Base/, ''),
             }
 
-        }
+        },
+
     }
 })
+
+/**  server: {
+        proxy: {
+            '/Base': {
+                target: "https://e-commerce-web-application-ul0n.onrender.com",
+                changeOrigin: true,
+                secure: true,
+                rewrite: (path) => path.replace(/^\/Base/, ''),
+
+            }
+
+        },
+    }, */

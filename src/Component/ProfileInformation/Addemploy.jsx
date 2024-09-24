@@ -60,7 +60,7 @@ function Addemploy() {
         try {
             SetLoding(true);
             SetError(false);
-            const Responce = await axios.post(`/BASE/API/V1/SignUp`, {
+            const Responce = await axios.post(`/Base/API/V1/SignUp`, {
                 Name:FromData.Name,
                 Email: FromData.email,
                 Password: FromData.password,

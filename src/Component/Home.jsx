@@ -7,7 +7,8 @@ import profile from '../assets/profile.jpg'
 import Animash from '../assets/sudip m.jpg'
 
 function Home() {
-
+	const data = useSelector((store)=>store.profileInfo);
+	console.log(data);
 
   return (
     <section className='lg:w-full lg:h-full sm:w-full sm:h-full bg-gradient-to-tr  from-[#eff6f8] from-1%   via-stone-50 via-80%  to-sky-500 to-100%   '>
@@ -17,7 +18,10 @@ function Home() {
           <div className='lg:text-2xl md:text-2xl sm:text-xl '>
             <h2>
               ADMIN EMAIL ID :lavofa6172@nastyx.com</h2>
+
               <h2> PASSWORD :  tomtom</h2>
+              <h2> PASSWORD :  tomtom ,</h2>
+
     <h2>and all employ Password is :tomtom</h2>
           
           </div>
@@ -89,34 +93,3 @@ function Home() {
 
 export default Home
 
-/**
-{/* <div className=' w-[240px] h-72 bg-green-600/20  rounded-md -shadow-md hover:shadow-none hover:duration-500 shadow-md shadow-stone-500 m-4 flex items-center gap-4  flex-col'>
-          <div className=' w-[40%] h-[33%] bg-slate-400 rounded-full mt-3 flex justify-center items-center overflow-hidden '><img src={profile} alt="" /></div>
-          <h1 className='text-2xl font-bold italic text-gray-700'>Tarak Nath Jana</h1>
-          <h1 className='text-sm font-bold italic text-center text-gray-600 ml-2'>Global Institute of Science and Technology ,</h1>
-
-        </div> */
-/* <div className=' w-[240px] h-72 bg-green-600/20  rounded-md -shadow-md hover:shadow-none hover:duration-500 shadow-md shadow-stone-500 m-4 flex items-center gap-4  flex-col'>
-  <div className=' w-[40%] h-[33%] bg-slate-400 rounded-full mt-3 flex justify-center items-center overflow-hidden '><img src={profile} alt="" /></div>
-  <h1 className='text-2xl font-bold italic text-gray-700'>Tarak Nath Jana</h1>
-  <h1 className='text-sm font-bold italic text-center text-gray-600 ml-2'>Global Institute of Science and Technology ,</h1>
-
-</div>
-<div className=' w-[240px] h-72 bg-green-600/20  rounded-md -shadow-md hover:shadow-none hover:duration-500 shadow-md shadow-stone-500 m-4 flex items-center gap-4  flex-col'>
-  <div className=' w-[40%] h-[33%] bg-slate-400 rounded-full mt-3 flex justify-center items-center overflow-hidden '><img src={profile} alt="" /></div>
-  <h1 className='text-2xl font-bold italic text-gray-700'>Tarak Nath Jana</h1>
-  <h1 className='text-sm font-bold italic text-center text-gray-600 ml-2'>Global Institute of Science and Technology ,</h1>
-
-</div>
-<div className=' w-[240px] h-72 bg-green-600/20  rounded-md -shadow-md hover:shadow-none hover:duration-500 shadow-md shadow-stone-500 m-4 flex items-center gap-4  flex-col'>
-  <div className=' w-[40%] h-[33%] bg-slate-400 rounded-full mt-3 flex justify-center items-center overflow-hidden '><img src={profile} alt="" /></div>
-  <h1 className='text-2xl font-bold italic text-gray-700'>Tarak Nath Jana</h1>
-  <h1 className='text-sm font-bold italic text-center text-gray-600 ml-2'>Global Institute of Science and Technology ,</h1>
-
-</div>
-<div className=' w-[240px] h-72 bg-green-600/20  rounded-md -shadow-md hover:shadow-none hover:duration-500 shadow-md shadow-stone-500 m-4 flex items-center gap-4  flex-col'>
-  <div className=' w-[40%] h-[33%] bg-slate-400 rounded-full mt-3 flex justify-center items-center overflow-hidden '><img src={profile} alt="" /></div>
-  <h1 className='text-2xl font-bold italic text-gray-700'>Tarak Nath Jana</h1>
-  <h1 className='text-sm font-bold italic text-center text-gray-600 ml-2'>Global Institute of Science and Technology ,</h1>
-
-</div>  */

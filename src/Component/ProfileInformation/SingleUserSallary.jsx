@@ -13,7 +13,7 @@ function SingleUserSallary({ data }) {
         const controller = new AbortController();
         try {
 
-            const Response = await axios.post(`/BASE/API/V1/AdminDetails`, { UserPersonalId: data.PersonalDetailsID },
+            const Response = await axios.post(`/Base/API/V1/AdminDetails`, { UserPersonalId: data.PersonalDetailsID },
                 {
                     headers: {
                         'Content-Type': 'application/json'
@@ -22,7 +22,7 @@ function SingleUserSallary({ data }) {
                 signal: controller.signal
             })
             
-            console.log(Response.data.Payload.Salary);
+          
             await SalaryProvide(Response.data.AdminData,Response.data.Payload);
             
 
@@ -105,7 +105,7 @@ function SingleUserSallary({ data }) {
         const controller = new AbortController();
         try {
 
-            const Response = await axios.post(`/BASE/API/V1/Sallary`, {
+            const Response = await axios.post(`/Base/API/V1/Sallary`, {
                 UserPersonalId: data.PersonalDetailsID,
                 AdminPerSonalID: Admin._id,
                 EmployName: Paylod.Name,
@@ -122,6 +122,7 @@ function SingleUserSallary({ data }) {
             alert('payment success fully');
 
         } catch (error) {
+            alert("payment failed");
             if (axios.isCancel(error)) {
                 return
             }
