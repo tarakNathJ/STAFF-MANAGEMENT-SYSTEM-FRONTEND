@@ -8,7 +8,7 @@ import Animash from '../assets/sudip m.jpg'
 
 function Home() {
 	const data = useSelector((store)=>store.profileInfo);
-	console.log(data);
+	//console.log(data);
 
   return (
     <section className='lg:w-full lg:h-full sm:w-full sm:h-full bg-gradient-to-tr  from-[#eff6f8] from-1%   via-stone-50 via-80%  to-sky-500 to-100%   '>

@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React,{useEffect,useState} from 'react'
+import {useSelector} from 'react-redux';
 
 
 
 function EmployAllDetails() {
+	const Token = useSelector((Store) => Store.profileInfo);
 	const [loding,setLoding] = useState(false);
 	const [Error,SetError] = useState(false);
 	const [Responce1,SetResponce1] = useState({});
@@ -18,9 +20,10 @@ function EmployAllDetails() {
 			try {
 				setLoding(true);
 				SetError(false);
-				const Responce = await axios.post(`/Base/API/V1/EmployDetails`,{},{
+				const Responce = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/API/V1/EmployDetails`,{},{
 					headers: {
-						'Content-Type': 'application/json'
+						'Content-Type': 'application/json',
+						Authorisation:`Bearer ${Token.UserToken}`,
 					}
 				},{
 					signal: controller.signal

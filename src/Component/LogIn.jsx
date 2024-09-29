@@ -2,7 +2,7 @@ import axios from 'axios';
 import React,{useState} from 'react'
 import {useDispatch} from 'react-redux';
 import {Link,useNavigate} from 'react-router-dom'
-import {UserPersonalDetails} from '../Redux/UserDetails';
+import {UserPersonalDetails,UserToken} from '../Redux/UserDetails';
 
 
 
@@ -56,24 +56,25 @@ function LogIn() {
 		try {
 			SetLoding(false);
 			SetError(false);
-			const Responce = await axios.post(`/Base/API/V1/logIn`,{
+			const Responce = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/API/V1/logIn`,{
 				Email: FromData.email,
 				Password: FromData.password
 
 			},{
 				headers: {
-					'Content-Type': 'application/json'
+					'Content-Type': 'application/json',
 				}
 			},{
 				signal: controller.signal
 			})
 
 
-			console.log(Responce.data);
+
 
 
 			SetLoding(true);
 			Dispatch(UserPersonalDetails(Responce.data.UserDetails));
+			Dispatch(UserToken(Responce.data.token));
 			Navigate('/');
 
 		} catch(Error) {

@@ -16,7 +16,7 @@ function SingleUser({ data,UserUpdate }) {
 
         try {
             SetError(false);
-            const Responce = await axios.post('/Base/API/V1/DeleteUser', { ID: data._id }, {
+            const Responce = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/API/V1/DeleteUser`, { ID: data._id }, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

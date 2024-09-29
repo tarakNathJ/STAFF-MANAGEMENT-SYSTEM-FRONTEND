@@ -15,7 +15,7 @@ function SallaryProvide() {
             try {
                 setLoding(true);
                 SetError(false);
-                const Responce = await axios.get('/Base/API/V1/AllEmploy', {}, {
+                const Responce = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/API/V1/AllEmploy`, {}, {
                     headers: {
                         'Content-Type': 'application/json'
                     }
